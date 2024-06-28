@@ -1,22 +1,73 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Diagnostics;
 
-public class SoundEmitter : MonoBehaviour
+public class ColliderOverlapHandler : MonoBehaviour
 {
-    AudioSource audioSource;
+    private AudioSource audioSource;
+    private Collider myCollider;
+    private bool toggleState = false;
+    private HashSet<Collider> overlappingColliders = new HashSet<Collider>();
+
     void Start()
     {
+        myCollider = GetComponent<Collider>();
+        ConfigureAudioSource();
+
+        if (myCollider == null)
+        {
+            return;
+        }
+
+        if (audioSource == null)
+        {
+            return;
+        }
+    }
+
+    void ConfigureAudioSource()
+    {
         audioSource = GetComponent<AudioSource>();
+        if (!audioSource)
+        {
+            return;
+        }
+        audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        audioSource.Play();
+        if (!overlappingColliders.Contains(other))
+        {
+            overlappingColliders.Add(other);
+            SetToggleState(!toggleState);
+        }
     }
 
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider other)
     {
-        audioSource.Stop();
+        if (overlappingColliders.Contains(other))
+        {
+            overlappingColliders.Remove(other);
+        }
+    }
+
+    private void SetToggleState(bool inState)
+    {
+        if (inState == toggleState)
+        {
+            return;
+        }
+
+        toggleState = inState;
+
+        if (toggleState)
+        {
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.Pause();
+        }
     }
 }
