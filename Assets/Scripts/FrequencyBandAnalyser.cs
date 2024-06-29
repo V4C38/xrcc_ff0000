@@ -44,10 +44,10 @@ public class FrequencyBandAnalyser : MonoBehaviour
     void UpdateFreqBands8()
     {
         // 22050 / 512 = 43hz per sample
-        // 10 - 60 hz
-        // 60 - 250
-        // 250 - 500
-        // 500 - 2000
+        // 10 - 60 hz [1] Kick
+        // 60 - 250 [2] bass
+        // 250 - 500 [3] synth, vocals, fx
+        // 500 - 2000 [4] Drums
         // 2000 - 4000
         // 4000 - 6000
         // 6000 - 20000
