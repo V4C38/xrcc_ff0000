@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Collections.Specialized;
 
 public class SoundEmitter : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class SoundEmitter : MonoBehaviour
 
     public Material trueStateMaterial;
     public Material falseStateMaterial;
+
+    public GameObject particlePrefab;
+    private Vector3 particleSpawnPosition;
 
     private MeshRenderer meshRenderer;
     private AudioSource audioPlayer;
@@ -34,6 +38,7 @@ public class SoundEmitter : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        particleSpawnPosition = other.transform.position;
         if (!overlappingColliders.Contains(other))
         {
             overlappingColliders.Add(other);
@@ -68,6 +73,13 @@ public class SoundEmitter : MonoBehaviour
             {
                 audioPlayer.mute = false;
             }
+            if (particlePrefab != null)
+            {
+                GameObject particleInstance = Instantiate(particlePrefab, particleSpawnPosition, Quaternion.identity);
+                Destroy(particleInstance, 1.25f);
+            }
+
+
         }
         else
         {
