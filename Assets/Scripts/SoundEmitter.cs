@@ -7,16 +7,12 @@ public class SoundEmitter : MonoBehaviour
     public MusicTimelineController timelineController;
     public ENAudioTrack audioTrack;
 
-    public GameObject prefabToSpawn;
-    Vector3 spawnPosition = new Vector3(0f, 0f, 0f);
-
     public Material trueStateMaterial;
     public Material falseStateMaterial;
 
     private MeshRenderer meshRenderer;
 
     public FrequencyBandAnalyser frequencyBandAnalyser;
-    private GameObject spawnedPrefab;
 
     private Collider myCollider;
     private bool toggleState = false;
@@ -40,7 +36,6 @@ public class SoundEmitter : MonoBehaviour
         {
             overlappingColliders.Add(other);
             SetToggleState(!toggleState);
-            spawnPosition = other.transform.position;
         }
     }
 
@@ -63,17 +58,6 @@ public class SoundEmitter : MonoBehaviour
 
         if (toggleState)
         {
-            Quaternion spawnRotation = Quaternion.identity;
-
-            if (spawnedPrefab == null)
-            {
-                spawnedPrefab = Instantiate(prefabToSpawn, spawnPosition, spawnRotation);
-                FFTSetMaterialColour fftSetMaterialColour = spawnedPrefab.GetComponent<FFTSetMaterialColour>();
-                if (fftSetMaterialColour != null)
-                {
-                    fftSetMaterialColour._FFT = frequencyBandAnalyser;
-                }
-            }
             if (meshRenderer != null)
             {
                 meshRenderer.material = trueStateMaterial;
@@ -81,11 +65,6 @@ public class SoundEmitter : MonoBehaviour
         }
         else
         {
-            if (spawnedPrefab != null)
-            {
-                Destroy(spawnedPrefab);
-                spawnedPrefab = null;
-            }
             if (meshRenderer != null)
             {
                 meshRenderer.material = falseStateMaterial;
