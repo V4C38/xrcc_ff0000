@@ -4,10 +4,14 @@ using System.Diagnostics;
 
 public class ColliderOverlapHandler : MonoBehaviour
 {
+    public MusicTimelineController timelineController;
+    public ENAudioTrack AudioTrack;
+
     private AudioSource audioSource;
     private Collider myCollider;
     private bool toggleState = false;
     private HashSet<Collider> overlappingColliders = new HashSet<Collider>();
+
 
     void Start()
     {
