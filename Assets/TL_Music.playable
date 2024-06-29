@@ -32,7 +32,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 0
+  m_Muted: 1
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_TrackProperties:
     volume: 1
     stereoPan: 0
-    spatialBlend: 0
+    spatialBlend: 1
 --- !u!114 &-7524843698361858079
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 0
+  m_Muted: 1
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_TrackProperties:
     volume: 1
     stereoPan: 0
-    spatialBlend: 0
+    spatialBlend: 1
 --- !u!114 &-6429858917668336709
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 0
+  m_Muted: 1
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_TrackProperties:
     volume: 1
     stereoPan: 0
-    spatialBlend: 0
+    spatialBlend: 1
 --- !u!114 &-1426161942255369606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 0
+  m_Muted: 1
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_TrackProperties:
     volume: 1
     stereoPan: 0
-    spatialBlend: 0
+    spatialBlend: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 0
+  m_Muted: 1
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_TrackProperties:
     volume: 1
     stereoPan: 0
-    spatialBlend: 0
+    spatialBlend: 1
 --- !u!114 &2821389824392538185
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 0
+  m_Muted: 1
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -703,4 +703,4 @@ MonoBehaviour:
   m_TrackProperties:
     volume: 1
     stereoPan: 0
-    spatialBlend: 0
+    spatialBlend: 1

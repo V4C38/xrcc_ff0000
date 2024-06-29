@@ -2,12 +2,22 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-public class ColliderOverlapHandler : MonoBehaviour
+public class SoundEmitter : MonoBehaviour
 {
-    public TrackMuteController timelineController;
+    public MusicTimelineController timelineController;
     public ENAudioTrack audioTrack;
 
-    private AudioSource audioSource;
+    public GameObject prefabToSpawn;
+    Vector3 spawnPosition = new Vector3(0f, 0f, 0f);
+
+    public Material trueStateMaterial;
+    public Material falseStateMaterial;
+
+    private MeshRenderer meshRenderer;
+
+    public FrequencyBandAnalyser frequencyBandAnalyser;
+    private GameObject spawnedPrefab;
+
     private Collider myCollider;
     private bool toggleState = false;
     private HashSet<Collider> overlappingColliders = new HashSet<Collider>();
@@ -16,27 +26,12 @@ public class ColliderOverlapHandler : MonoBehaviour
     void Start()
     {
         myCollider = GetComponent<Collider>();
-        ConfigureAudioSource();
+        meshRenderer = GetComponent<MeshRenderer>();
 
         if (myCollider == null)
         {
             return;
         }
-
-        if (audioSource == null)
-        {
-            return;
-        }
-    }
-
-    void ConfigureAudioSource()
-    {
-        audioSource = GetComponent<AudioSource>();
-        if (!audioSource)
-        {
-            return;
-        }
-        audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
     }
 
     void OnTriggerEnter(Collider other)
@@ -45,6 +40,7 @@ public class ColliderOverlapHandler : MonoBehaviour
         {
             overlappingColliders.Add(other);
             SetToggleState(!toggleState);
+            spawnPosition = other.transform.position;
         }
     }
 
@@ -65,19 +61,42 @@ public class ColliderOverlapHandler : MonoBehaviour
 
         toggleState = inState;
 
-
         if (toggleState)
         {
-            audioSource.mute = false;
+            Quaternion spawnRotation = Quaternion.identity;
+
+            if (spawnedPrefab == null)
+            {
+                spawnedPrefab = Instantiate(prefabToSpawn, spawnPosition, spawnRotation);
+                FFTSetMaterialColour fftSetMaterialColour = spawnedPrefab.GetComponent<FFTSetMaterialColour>();
+                if (fftSetMaterialColour != null)
+                {
+                    fftSetMaterialColour._FFT = frequencyBandAnalyser;
+                }
+            }
+            if (meshRenderer != null)
+            {
+                meshRenderer.material = trueStateMaterial;
+            }
         }
         else
         {
-            audioSource.mute = true;
+            if (spawnedPrefab != null)
+            {
+                Destroy(spawnedPrefab);
+                spawnedPrefab = null;
+            }
+            if (meshRenderer != null)
+            {
+                meshRenderer.material = falseStateMaterial;
+            }
         }
 
-
-
-        // timelineController.RequestTrackState(audioTrack, toggleState);
+        if (timelineController != null)
+        {
+            timelineController.RequestTrackState(audioTrack, toggleState);
+        }
+        
 
     }
 }
