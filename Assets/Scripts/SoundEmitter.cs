@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Collections.Specialized;
+using System.Security.Cryptography;
 
 public class SoundEmitter : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class SoundEmitter : MonoBehaviour
 
     public GameObject particlePrefab;
     private Vector3 particleSpawnPosition;
-    public ParticleSystem[] particleSystems;
+    public GameObject particlePrefabWhileActive;
+    public GameObject[] particleSystemLocation;
+    private List<GameObject> spawnedPS  = new List<GameObject>();
 
     private MeshRenderer meshRenderer;
     private AudioSource audioPlayer;
@@ -34,7 +37,9 @@ public class SoundEmitter : MonoBehaviour
         if (myCollider == null)
         {
             return;
+
         }
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -79,11 +84,27 @@ public class SoundEmitter : MonoBehaviour
                 GameObject particleInstance = Instantiate(particlePrefab, particleSpawnPosition, Quaternion.identity);
                 Destroy(particleInstance, 1.25f);
             }
-            if (GetComponent<ParticleSystem>() != null)
+            foreach (GameObject psl in particleSystemLocation)
             {
-                GetComponent<ParticleSystem>().Play();
-            }
+                if (particlePrefabWhileActive == null) { return;}
+                GameObject particleInstance = Instantiate(particlePrefabWhileActive, psl.transform.position, psl.transform.rotation, psl.transform.parent);
+                FFTSetParticleProp FFTParticlePropScript = particleInstance.GetComponent<FFTSetParticleProp>();
+                if (FFTParticlePropScript != null)
+                {
+                    FFTParticlePropScript._FFT = frequencyBandAnalyser;
+                    FFTModifyPulse PulseScript = GetComponent<FFTModifyPulse>();
+                    if (PulseScript != null)
+                    {
+                        FFTParticlePropScript._FrequencyBandIndex = PulseScript._FrequencyBandIndex;
+                    }
+                }
+                else
+                {
+                    print("Particle Prop does not exist");
+                }
 
+                spawnedPS.Add(particleInstance);
+            }
         }
         else
         {
@@ -95,10 +116,11 @@ public class SoundEmitter : MonoBehaviour
             {
                 audioPlayer.mute = true;
             }
-            if (GetComponent<ParticleSystem>() != null)
+            foreach (GameObject ps in spawnedPS)
             {
-                GetComponent<ParticleSystem>().Stop();
+                Destroy(ps, 1.0f);
             }
+            spawnedPS.Clear();
         }
 
     }

@@ -17,13 +17,23 @@ public class FFTSetParticleProp : MonoBehaviour
 
     private void Start()
     {
-        _particles = GetComponent<ParticleSystem>();
+        
     }
 
     void Update()
-    {        
-        float speed = _FFT.GetBandValue(_FrequencyBandIndex, _FreqBands) * _speedScalar;
-        ParticleSystem.MainModule _main = _particles.main;
-        _main.simulationSpeed = speed;
+    {
+        if (_particles == null)
+        {
+            _particles = GetComponent<ParticleSystem>();
+        }
+        else
+        {
+            if(_FFT != null)
+            {
+                float speed = _FFT.GetBandValue(_FrequencyBandIndex, _FreqBands) * _speedScalar;
+                ParticleSystem.MainModule _main = _particles.main;
+                _main.simulationSpeed = speed;
+            }
+        }
     }
 }
