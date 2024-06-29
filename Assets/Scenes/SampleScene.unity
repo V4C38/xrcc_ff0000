@@ -7978,7 +7978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FreqBands: 8
-  _FrequencyBandIndex: 2
+  _FrequencyBandIndex: 3
   _StrengthScalar: 20
 --- !u!1 &433609484
 GameObject:
@@ -11669,9 +11669,9 @@ GameObject:
   - component: {fileID: 668433949}
   - component: {fileID: 668433950}
   - component: {fileID: 668433951}
-  - component: {fileID: 668433952}
   - component: {fileID: 668433953}
   - component: {fileID: 668433954}
+  - component: {fileID: 668433955}
   m_Layer: 0
   m_Name: Model_Bass
   m_TagString: Untagged
@@ -11728,7 +11728,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668433944}
-  m_Mesh: {fileID: -3137129725661375301, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
+  m_Mesh: {fileID: -3137129725661375301, guid: 5c17ea350d71e3b46a19724a5c0364c6, type: 3}
 --- !u!4 &668433947
 Transform:
   m_ObjectHideFlags: 0
@@ -11785,8 +11785,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioTrack: 2
-  trueStateMaterial: {fileID: 2100000, guid: 55b10b2f4aa1f2849ab1b2d62d8b248c, type: 2}
+  trueStateMaterial: {fileID: 2100000, guid: f96f3a888578423448d08ab785db66ea, type: 2}
   falseStateMaterial: {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
+  particlePrefab: {fileID: 5057787915281199109, guid: 80155df9c3f7f21498cda5e87edcca59, type: 3}
 --- !u!82 &668433951
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11883,28 +11884,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!64 &668433952
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668433944}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3137129725661375301, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
 --- !u!114 &668433953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11937,6 +11916,28 @@ MonoBehaviour:
   _DrawGizmos: 0
   _FreqBands8: []
   _FreqBands64: []
+--- !u!64 &668433955
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668433944}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3137129725661375301, guid: 5c17ea350d71e3b46a19724a5c0364c6, type: 3}
 --- !u!1 &670879107
 GameObject:
   m_ObjectHideFlags: 0
@@ -12694,9 +12695,9 @@ GameObject:
   - component: {fileID: 1578568194}
   - component: {fileID: 1578568196}
   - component: {fileID: 1578568199}
-  - component: {fileID: 1578568195}
   - component: {fileID: 1578568191}
   - component: {fileID: 1578568200}
+  - component: {fileID: 1578568201}
   m_Layer: 0
   m_Name: Model_Drums
   m_TagString: Untagged
@@ -14806,9 +14807,9 @@ GameObject:
   - component: {fileID: 1238094174}
   - component: {fileID: 1238094176}
   - component: {fileID: 1238094179}
-  - component: {fileID: 1238094175}
   - component: {fileID: 1238094171}
   - component: {fileID: 1238094180}
+  - component: {fileID: 1238094181}
   m_Layer: 0
   m_Name: Model_Kick
   m_TagString: Untagged
@@ -16507,9 +16508,9 @@ GameObject:
   - component: {fileID: 968094201}
   - component: {fileID: 968094203}
   - component: {fileID: 968094206}
-  - component: {fileID: 968094202}
   - component: {fileID: 433549794}
   - component: {fileID: 968094207}
+  - component: {fileID: 968094208}
   m_Layer: 0
   m_Name: Model_Vocals
   m_TagString: Untagged
@@ -16560,28 +16561,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &968094202
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968094199}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7822804124435574998, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
 --- !u!114 &968094203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16595,8 +16574,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioTrack: 1
-  trueStateMaterial: {fileID: 2100000, guid: 55b10b2f4aa1f2849ab1b2d62d8b248c, type: 2}
+  trueStateMaterial: {fileID: 2100000, guid: 704f5ec7728f3634b95d1129e59ea75e, type: 2}
   falseStateMaterial: {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
+  particlePrefab: {fileID: 5057787915281199109, guid: 80155df9c3f7f21498cda5e87edcca59, type: 3}
 --- !u!23 &968094204
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16617,8 +16597,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
-  - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
   - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -16648,7 +16626,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968094199}
-  m_Mesh: {fileID: -7822804124435574998, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
+  m_Mesh: {fileID: -7822804124435574998, guid: e6c143d1ca2d8d44c92c29c4307e40bd, type: 3}
 --- !u!82 &968094206
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16762,6 +16740,28 @@ MonoBehaviour:
   _DrawGizmos: 0
   _FreqBands8: []
   _FreqBands64: []
+--- !u!64 &968094208
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968094199}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7822804124435574998, guid: e6c143d1ca2d8d44c92c29c4307e40bd, type: 3}
 --- !u!1 &968450738
 GameObject:
   m_ObjectHideFlags: 0
@@ -17793,8 +17793,8 @@ Transform:
   m_GameObject: {fileID: 1055445691}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.3, z: -21.66}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalPosition: {x: 0, y: -0.61, z: -8.94}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 968094200}
@@ -20321,7 +20321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FreqBands: 8
-  _FrequencyBandIndex: 2
+  _FrequencyBandIndex: 1
   _StrengthScalar: 20
 --- !u!4 &1238094173
 Transform:
@@ -20366,28 +20366,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1238094175
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842414411}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3154399366593605549, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
 --- !u!114 &1238094176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20401,8 +20379,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioTrack: 4
-  trueStateMaterial: {fileID: 2100000, guid: 55b10b2f4aa1f2849ab1b2d62d8b248c, type: 2}
+  trueStateMaterial: {fileID: 2100000, guid: 5ced4303142195c419692fffb8f8cf7f, type: 2}
   falseStateMaterial: {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
+  particlePrefab: {fileID: 5057787915281199109, guid: 80155df9c3f7f21498cda5e87edcca59, type: 3}
 --- !u!23 &1238094177
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20423,8 +20402,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
-  - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
   - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -20454,7 +20431,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842414411}
-  m_Mesh: {fileID: -3154399366593605549, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
+  m_Mesh: {fileID: -3154399366593605549, guid: 5c17ea350d71e3b46a19724a5c0364c6, type: 3}
 --- !u!82 &1238094179
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20568,6 +20545,28 @@ MonoBehaviour:
   _DrawGizmos: 0
   _FreqBands8: []
   _FreqBands64: []
+--- !u!64 &1238094181
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842414411}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3154399366593605549, guid: 5c17ea350d71e3b46a19724a5c0364c6, type: 3}
 --- !u!1 &1238991924
 GameObject:
   m_ObjectHideFlags: 0
@@ -23310,9 +23309,9 @@ GameObject:
   - component: {fileID: 1575774821}
   - component: {fileID: 1575774823}
   - component: {fileID: 1575774826}
-  - component: {fileID: 1575774822}
   - component: {fileID: 1575774818}
   - component: {fileID: 1575774827}
+  - component: {fileID: 1575774828}
   m_Layer: 0
   m_Name: Model_Fx
   m_TagString: Untagged
@@ -23334,9 +23333,9 @@ GameObject:
   - component: {fileID: 2062003223}
   - component: {fileID: 2062003222}
   - component: {fileID: 2062003220}
-  - component: {fileID: 2062003221}
   - component: {fileID: 2062003218}
   - component: {fileID: 2062003227}
+  - component: {fileID: 2062003228}
   m_Layer: 0
   m_Name: Model_Synth
   m_TagString: Untagged
@@ -25940,7 +25939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FreqBands: 8
-  _FrequencyBandIndex: 2
+  _FrequencyBandIndex: 3
   _StrengthScalar: 20
 --- !u!4 &1575774820
 Transform:
@@ -25985,28 +25984,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1575774822
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391493164}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2743564813143213805, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
 --- !u!114 &1575774823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26020,8 +25997,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioTrack: 5
-  trueStateMaterial: {fileID: 2100000, guid: 55b10b2f4aa1f2849ab1b2d62d8b248c, type: 2}
+  trueStateMaterial: {fileID: 2100000, guid: 25875e8860e0e6947bdb858530aa85f2, type: 2}
   falseStateMaterial: {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
+  particlePrefab: {fileID: 5057787915281199109, guid: 80155df9c3f7f21498cda5e87edcca59, type: 3}
 --- !u!23 &1575774824
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26042,8 +26020,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
-  - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
   - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -26073,7 +26049,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391493164}
-  m_Mesh: {fileID: -2743564813143213805, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
+  m_Mesh: {fileID: -2743564813143213805, guid: 5c17ea350d71e3b46a19724a5c0364c6, type: 3}
 --- !u!82 &1575774826
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26187,6 +26163,28 @@ MonoBehaviour:
   _DrawGizmos: 0
   _FreqBands8: []
   _FreqBands64: []
+--- !u!64 &1575774828
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391493164}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2743564813143213805, guid: 5c17ea350d71e3b46a19724a5c0364c6, type: 3}
 --- !u!114 &1578568191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26200,7 +26198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FreqBands: 8
-  _FrequencyBandIndex: 2
+  _FrequencyBandIndex: 4
   _StrengthScalar: 20
 --- !u!4 &1578568193
 Transform:
@@ -26245,28 +26243,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1578568195
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722494595}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8080137574075050232, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
 --- !u!114 &1578568196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26282,6 +26258,7 @@ MonoBehaviour:
   audioTrack: 3
   trueStateMaterial: {fileID: 2100000, guid: 55b10b2f4aa1f2849ab1b2d62d8b248c, type: 2}
   falseStateMaterial: {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
+  particlePrefab: {fileID: 5057787915281199109, guid: 80155df9c3f7f21498cda5e87edcca59, type: 3}
 --- !u!23 &1578568197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26302,8 +26279,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
-  - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
   - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -26333,7 +26308,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722494595}
-  m_Mesh: {fileID: -8080137574075050232, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
+  m_Mesh: {fileID: -8080137574075050232, guid: 5c17ea350d71e3b46a19724a5c0364c6, type: 3}
 --- !u!82 &1578568199
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26447,6 +26422,28 @@ MonoBehaviour:
   _DrawGizmos: 0
   _FreqBands8: []
   _FreqBands64: []
+--- !u!64 &1578568201
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722494595}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8080137574075050232, guid: 5c17ea350d71e3b46a19724a5c0364c6, type: 3}
 --- !u!1 &1585166334
 GameObject:
   m_ObjectHideFlags: 0
@@ -35315,7 +35312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FreqBands: 8
-  _FrequencyBandIndex: 2
+  _FrequencyBandIndex: 3
   _StrengthScalar: 20
 --- !u!82 &2062003220
 AudioSource:
@@ -35413,28 +35410,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!64 &2062003221
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391986983}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8201437419870775723, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
 --- !u!114 &2062003222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35448,8 +35423,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioTrack: 6
-  trueStateMaterial: {fileID: 2100000, guid: 55b10b2f4aa1f2849ab1b2d62d8b248c, type: 2}
+  trueStateMaterial: {fileID: 2100000, guid: de1fb4b2b6a7bd14f8893ac4ba6572b2, type: 2}
   falseStateMaterial: {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
+  particlePrefab: {fileID: 5057787915281199109, guid: 80155df9c3f7f21498cda5e87edcca59, type: 3}
 --- !u!54 &2062003223
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35498,8 +35474,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
-  - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
-  - {fileID: -876546973899608171, guid: 6f4d0e0a24fd3594baa4d4ba500fa6db, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35528,7 +35502,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391986983}
-  m_Mesh: {fileID: 8201437419870775723, guid: b4cfd2fc43e8fac459b239870f11d05c, type: 3}
+  m_Mesh: {fileID: 8201437419870775723, guid: 5c17ea350d71e3b46a19724a5c0364c6, type: 3}
 --- !u!4 &2062003226
 Transform:
   m_ObjectHideFlags: 0
@@ -35562,6 +35536,28 @@ MonoBehaviour:
   _DrawGizmos: 0
   _FreqBands8: []
   _FreqBands64: []
+--- !u!64 &2062003228
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391986983}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8201437419870775723, guid: 5c17ea350d71e3b46a19724a5c0364c6, type: 3}
 --- !u!1 &2064102595
 GameObject:
   m_ObjectHideFlags: 0
