@@ -65,7 +65,19 @@ public class ColliderOverlapHandler : MonoBehaviour
 
         toggleState = inState;
 
-        timelineController.RequestTrackState(audioTrack, toggleState);
+
+        if (toggleState)
+        {
+            audioSource.mute = false;
+        }
+        else
+        {
+            audioSource.mute = true;
+        }
+
+
+
+        // timelineController.RequestTrackState(audioTrack, toggleState);
 
     }
 }
