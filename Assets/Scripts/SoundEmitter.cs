@@ -4,8 +4,8 @@ using System.Diagnostics;
 
 public class ColliderOverlapHandler : MonoBehaviour
 {
-    public MusicTimelineController timelineController;
-    public ENAudioTrack AudioTrack;
+    public TrackMuteController timelineController;
+    public ENAudioTrack audioTrack;
 
     private AudioSource audioSource;
     private Collider myCollider;
@@ -65,13 +65,7 @@ public class ColliderOverlapHandler : MonoBehaviour
 
         toggleState = inState;
 
-        if (toggleState)
-        {
-            audioSource.Play();
-        }
-        else
-        {
-            audioSource.Pause();
-        }
+        timelineController.RequestTrackState(audioTrack, toggleState);
+
     }
 }
