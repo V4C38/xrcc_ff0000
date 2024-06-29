@@ -62,12 +62,19 @@ public class SoundEmitter : MonoBehaviour
 
     private void SetToggleState(bool inState)
     {
+        if (particlePrefab != null)
+        {
+            GameObject particleInstance = Instantiate(particlePrefab, particleSpawnPosition, Quaternion.identity);
+            Destroy(particleInstance, 1.25f);
+        }
+
         if (inState == toggleState)
         {
             return;
         }
 
         toggleState = inState;
+
 
         if (toggleState)
         {
@@ -78,11 +85,6 @@ public class SoundEmitter : MonoBehaviour
             if (audioPlayer != null)
             {
                 audioPlayer.mute = false;
-            }
-            if (particlePrefab != null)
-            {
-                GameObject particleInstance = Instantiate(particlePrefab, particleSpawnPosition, Quaternion.identity);
-                Destroy(particleInstance, 1.25f);
             }
             foreach (GameObject psl in particleSystemLocation)
             {
