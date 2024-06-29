@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class FFTModifyPulse : MonoBehaviour
 {   
-    public FrequencyBandAnalyser _FFT;
+    private FrequencyBandAnalyser _FFT;
     public FrequencyBandAnalyser.Bands _FreqBands = FrequencyBandAnalyser.Bands.Eight;
     public int _FrequencyBandIndex = 0;
 
@@ -18,6 +18,7 @@ public class FFTModifyPulse : MonoBehaviour
 
     private void Start()
     {
+        _FFT = GetComponent<FrequencyBandAnalyser>();
         _MeshRenderer = GetComponent<MeshRenderer>();
     }
 

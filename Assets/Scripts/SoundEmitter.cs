@@ -4,15 +4,15 @@ using System.Diagnostics;
 
 public class SoundEmitter : MonoBehaviour
 {
-    public MusicTimelineController timelineController;
     public ENAudioTrack audioTrack;
 
     public Material trueStateMaterial;
     public Material falseStateMaterial;
 
     private MeshRenderer meshRenderer;
+    private AudioSource audioPlayer;
 
-    public FrequencyBandAnalyser frequencyBandAnalyser;
+    private FrequencyBandAnalyser frequencyBandAnalyser;
 
     private Collider myCollider;
     private bool toggleState = false;
@@ -23,6 +23,8 @@ public class SoundEmitter : MonoBehaviour
     {
         myCollider = GetComponent<Collider>();
         meshRenderer = GetComponent<MeshRenderer>();
+        frequencyBandAnalyser = GetComponent<FrequencyBandAnalyser>();
+        audioPlayer = GetComponent<AudioSource>();
 
         if (myCollider == null)
         {
@@ -62,6 +64,10 @@ public class SoundEmitter : MonoBehaviour
             {
                 meshRenderer.material = trueStateMaterial;
             }
+            if (audioPlayer != null)
+            {
+                audioPlayer.mute = false;
+            }
         }
         else
         {
@@ -69,13 +75,11 @@ public class SoundEmitter : MonoBehaviour
             {
                 meshRenderer.material = falseStateMaterial;
             }
+            if (audioPlayer != null)
+            {
+                audioPlayer.mute = true;
+            }
         }
-
-        if (timelineController != null)
-        {
-            timelineController.RequestTrackState(audioTrack, toggleState);
-        }
-        
 
     }
 }
