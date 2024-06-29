@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MusicPulse
+  m_Name: MusicPulse_4
   m_Shader: {fileID: -6465566751694194690, guid: c14cc804159a0e94fb115eb8934c68dc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -43,5 +43,6 @@ Material:
     - _Strength: 20
     m_Colors:
     - _Col: {r: 0.97205967, g: 1, b: 0, a: 0}
+    - _Color: {r: 0.14509805, g: 0.6627451, b: 0.50980395, a: 1}
     - _MinMax: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
