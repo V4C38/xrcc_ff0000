@@ -12,7 +12,7 @@ public class SoundEmitter : MonoBehaviour
 
     public GameObject particlePrefab;
     private Vector3 particleSpawnPosition;
-    public ParticleSystem particleSystem;
+    public ParticleSystem[] particleSystems;
 
     private MeshRenderer meshRenderer;
     private AudioSource audioPlayer;
@@ -79,9 +79,9 @@ public class SoundEmitter : MonoBehaviour
                 GameObject particleInstance = Instantiate(particlePrefab, particleSpawnPosition, Quaternion.identity);
                 Destroy(particleInstance, 1.25f);
             }
-            if (particleSystem != null)
+            if (GetComponent<ParticleSystem>() != null)
             {
-                particleSystem.Play();
+                GetComponent<ParticleSystem>().Play();
             }
 
         }
@@ -95,9 +95,9 @@ public class SoundEmitter : MonoBehaviour
             {
                 audioPlayer.mute = true;
             }
-            if (particleSystem != null)
+            if (GetComponent<ParticleSystem>() != null)
             {
-                particleSystem.Stop();
+                GetComponent<ParticleSystem>().Stop();
             }
         }
 
