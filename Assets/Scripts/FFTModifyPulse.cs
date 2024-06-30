@@ -27,7 +27,6 @@ public class FFTModifyPulse : MonoBehaviour
         float strength = _FFT.GetBandValue(_FrequencyBandIndex, _FreqBands) * _StrengthScalar;
         if (strength > max_encountered)
             max_encountered = strength;
-        Debug.Log("Str: " + strength.ToString());
         _MeshRenderer.material.SetVector("_MinMax", new Vector2(0, max_encountered));
         _MeshRenderer.material.SetFloat("_Strength", strength);
         //_MeshRenderer.material.SetColor(_ColourName, _Col * strength);        
