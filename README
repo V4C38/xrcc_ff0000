@@ -1,4 +1,18 @@
 # Introduction
+This repository houses CUPRA's Sonic Vroom - an audio visualizer which uses CUPRA's cars as a musical beat-making device.
+
+Made with Unity 2022.3.30f1.
+
+# Instructions
+1. Download apk file from [release page](https://github.com/V4C38/XRCC_FF0000/releases/tag/Release).
+2. Run on Quest 3.
+3. Start visualization
+4. Grip white ball with controller to move the car outline on top of a real CUPRA Formentor OR place the car outline in an empty space.
+5. (Optional) Move single car parts with controller.
+6. Leave controllers on the ground and move to hand tracking OR keep controllers.
+7. Touch the different parts of car with your hand (or controller with nothing pressed) and enjoy your music :)
+
+Note: For best experience, imagine yourself as a DJ at a rave.
 
 # References
 Audio-based VFX code gotten from [AudioVizURP repo](https://github.com/EXP-Productions/AudioVizURP/tree/main)
