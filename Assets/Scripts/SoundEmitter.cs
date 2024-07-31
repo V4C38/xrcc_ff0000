@@ -90,6 +90,12 @@ public class SoundEmitter : MonoBehaviour
             {
                 if (particlePrefabWhileActive == null) { return;}
                 GameObject particleInstance = Instantiate(particlePrefabWhileActive, psl.transform.position, psl.transform.rotation, psl.transform.parent);
+
+                // Modify scale of particles depending on scale of car
+                Vector3 carGrabberScale = psl.transform.parent.transform.parent.transform.parent.transform.localScale;
+                float scaleChange = 0.5f / carGrabberScale.x;
+                particleInstance.transform.localScale = new Vector3(particleInstance.transform.localScale.x / scaleChange, particleInstance.transform.localScale.y / scaleChange, particleInstance.transform.localScale.z / scaleChange);
+
                 FFTSetParticleProp FFTParticlePropScript = particleInstance.GetComponent<FFTSetParticleProp>();
                 if (FFTParticlePropScript != null)
                 {
